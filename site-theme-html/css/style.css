@@ -285,6 +285,7 @@ nav.menu ul.main-menu li.mega-menu:hover ul.mega-submenu{
 nav.menu ul.main-menu li.mega-menu ul.mega-submenu li.mega-submenu-item{
     width: 230px;
     height: 100%;
+    padding-top: 20px;
 }
 nav.menu ul.main-menu li.mega-menu ul.mega-submenu li.mega-submenu-item a.mega-submenu-link{
     padding: 10px 20px;
