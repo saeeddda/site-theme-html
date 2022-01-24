@@ -112,6 +112,7 @@ ul{
 /*---------------------------------------------------------------------*/
 header{
     background-color: #fff;
+    box-shadow: 0px 2px 6px rgb(0 0 0 / 6%);
 }
 header .top-header{
     padding:15px 0 10px;
@@ -199,7 +200,8 @@ nav.menu ul.main-menu{
     justify-content: flex-start;
     align-items:center ;
 }
-nav.menu ul.main-menu li.menu-item{
+nav.menu ul.main-menu li.menu-item,
+nav.menu ul.main-menu li.mega-menu{
     padding: 10px;
     position: relative;
     transition: all 100ms ease-in-out;
@@ -209,30 +211,86 @@ nav.menu ul.main-menu li.menu-item:hover{
     background-color: #f874742a;
     border-bottom: 2px solid #eb3a3a;
 }
-nav.menu ul.main-menu li.menu-item:hover ul.submenu{
-    visibility: visible;
-}
-nav.menu ul.main-menu li.menu-item a.menu-link{
+nav.menu ul.main-menu li.menu-item a.menu-link,
+nav.menu ul.main-menu li.mega-menu a.mega-menu-link{
     font-size: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 nav.menu ul.main-menu li.menu-item ul.submenu{
     width: 250px;
+    padding-top: 20px;
     border-radius: 8px;
     background-color: #fff;
     position: absolute;
-    top: 25px;
+    top: 20px;
     right: 0;
     font-size: 15px;
     overflow: hidden;
     visibility: hidden;
     box-shadow: 0px 3px 12px rgb(0 0 0 / 6%);
+    z-index: -1;
+    transition: all 100ms ease-in-out;
+}
+nav.menu ul.main-menu li.menu-item:hover ul.submenu{
+    top:30px;
+    visibility: visible;
 }
 nav.menu ul.main-menu li.menu-item ul.submenu li.submenu-item{
     padding: 10px 20px;
 }
 nav.menu ul.main-menu li.menu-item ul.submenu li.submenu-item:hover{
-    background-color: #eb3a3a4d;
+    background-color: #f874742a;
 }
 nav.menu ul.main-menu li.menu-item ul.submenu li.submenu-item:hover a{
     color: #eb3a3a;
+}
+nav.menu ul.main-menu li.mega-menu{
+    width: 170px;
+    margin-left: 5px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    position: relative;
+}
+nav.menu ul.main-menu li.mega-menu a.mega-menu-link img.mega-menu-image{
+    width: 18px;
+    margin-left: 10px;
+}
+nav.menu ul.main-menu li.mega-menu a.mega-menu-link img.mega-menu-arrow{
+    width: 10px;
+    transform: rotate(180deg);
+    transition: all 150ms ease-in-out;
+}
+nav.menu ul.main-menu li.mega-menu:hover a.mega-menu-link img.mega-menu-arrow{
+    transform: rotate(0deg);
+}
+nav.menu ul.main-menu li.mega-menu ul.mega-submenu{
+    width: 1600px;
+    height: 500px;
+    border-radius: 0 0 16px 16px;
+    background-color: #fff;
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    visibility: visible;
+    box-shadow: 0px 3px 12px rgb(0 0 0 / 6%);
+    transition: all 150ms ease-in-out;
+    z-index: -1;
+}
+nav.menu ul.main-menu li.mega-menu:hover ul.mega-submenu{
+    top: 30px;
+    visibility: visible;
+}
+nav.menu ul.main-menu li.mega-menu ul.mega-submenu li.mega-submenu-item{
+    width: 230px;
+    height: 100%;
+}
+nav.menu ul.main-menu li.mega-menu ul.mega-submenu li.mega-submenu-item a.mega-submenu-link{
+    padding: 10px 20px;
+    font-size: 14px;
+}
+nav.menu ul.main-menu li.mega-menu ul.mega-submenu li.mega-submenu-item ul.mega-submenu-list{
+    width: 100%;
+    height: 100%;
 }
