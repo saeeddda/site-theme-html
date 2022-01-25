@@ -107,6 +107,9 @@ a:hover{
     max-width: 1676px !important;
     margin: 0 auto;
 }
+.container{
+    max-width: 1400px !important;
+}
 ul{
     list-style: none;
     margin: 0;
@@ -218,17 +221,20 @@ header .top-header .account-cart-buttons a.mini-cart span{
 nav.menu{
     height: 54px;
     padding: 10px  0 0 0;
+    background-color: #fff;
 }
 nav.menu ul.main-menu{
     display: flex;
     justify-content: flex-start;
     align-items:center ;
+    background-color: #fff;
 }
 nav.menu ul.main-menu li.menu-item,
 nav.menu ul.main-menu li.mega-menu{
     height: 43px;
     padding: 10px;
     position: relative;
+    background-color: #fff;
     transition: all 100ms ease-in-out;
     cursor: pointer;
 }
@@ -409,15 +415,62 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items 
     width: 100%;
     height: 100%;
 }
-.banners{
+.top-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+}
+.top-section .banners{
+    width: 25%;
     display: flex;
     flex-direction: column;
-    
 }
-.banners img{
+.top-section .banners img{
     width: 100%;
     height: 100%;
     border-radius: 16px;
-    margin-bottom: 10px;
     box-shadow: 2px 2px 6px rgb(0 0 0 / 15%);
+}
+.top-section .banners img + img{
+    margin-top: 10px;
+}
+.top-section .main-slider{
+    width: 50%;
+    margin: 0 10px;
+    border-radius: 16px;
+    position: relative;
+}
+.top-section .main-slider .owl-stage-outer{
+    border-radius: 16px;
+}
+.top-section .main-slider .owl-stage-outer .owl-stage .owl-item .slider-image .slider-link img{
+    width: 100%;
+}
+.top-section .main-slider .owl-dots{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+.top-section .main-slider .owl-dots button.owl-dot{
+    margin: 0 5px;
+}
+.top-section .main-slider .owl-dots button.owl-dot span{
+    width: 20px;
+    height: 10px;
+    background-color: #fff;
+    opacity: 0.80;
+    display: block;
+    border-radius: 50px;
+}
+.top-section .main-slider .owl-dots button.owl-dot.active span{
+    width: 50px;
+    opacity: 1;
+    background-color: #eb3a3a;
 }

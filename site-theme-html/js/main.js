@@ -56,3 +56,16 @@ megaMenus.forEach(function (elements) {
         });
     }
 }); 
+
+$('.main-slider').owlCarousel({
+    rtl:true,
+    loop:true,
+    //margin:10,
+    //nav:true,
+    mouseDrag:true,
+    tuchDrag:true,
+    dots:true,
+    //autoWidth:true,
+    //autoplay:true,
+    items:1,
+})
