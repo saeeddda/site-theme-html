@@ -58,14 +58,41 @@ megaMenus.forEach(function (elements) {
 }); 
 
 $('.main-slider').owlCarousel({
-    rtl:true,
-    loop:true,
-    //margin:10,
-    //nav:true,
-    mouseDrag:true,
-    tuchDrag:true,
-    dots:true,
-    //autoWidth:true,
-    //autoplay:true,
-    items:1,
+    rtl:!0,
+    loop:1,
+    mouseDrag:1,
+    tuchDrag:1,
+    dots:1,
+    autoHeight: !0,
+    autoplay:1,
+    lazyLoad: !0,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: !1,
+    animateOut: "fadeOut",
+    responsive: {0: {items: 1}}
+})
+$('.category-items').owlCarousel({
+    rtl:!0,
+    mouseDrag:1,
+    tuchDrag:1,
+    dots:0,
+    items:5,
+    margin:10,
+    nav:1,
+    navText:["<img src=\"img\\Right-Arrow-1.png\">", "<img src=\"img\\Left-Arrow-1.png\">"],
+})
+$('.product-items').owlCarousel({
+    rtl:!0,
+    mouseDrag:1,
+    tuchDrag:1,
+    dots:0,
+    items:6,
+    margin:10,
+    nav:1,
+    navText:["<img src=\"img\\Right-Arrow-1.png\">", "<img src=\"img\\Left-Arrow-1.png\">"],
+})
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip({
+        delay:{"show":50,"hide":50}
+    })
 })
