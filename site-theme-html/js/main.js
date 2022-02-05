@@ -1,18 +1,18 @@
 "use strict";
 
-var bg_dark = document.querySelectorAll('.dark-background');
+var bg_dark = document.querySelectorAll('body');
 var menu_item = document.querySelectorAll('.menu-item');
 var mega_menu = document.querySelectorAll('.mega-menu');
 
 menu_item.forEach(function(ele){
     ele.addEventListener("mouseover",function(){
         bg_dark.forEach(function(elem){
-            elem.classList.add("active");
+            elem.classList.add("page-block");
         });
     });
     ele.addEventListener("mouseout",function(){
         bg_dark.forEach(function(elem){
-            elem.classList.remove("active");
+            elem.classList.remove("page-block");
         });
     });
 });
@@ -20,12 +20,12 @@ menu_item.forEach(function(ele){
 mega_menu.forEach(function(ele){
     ele.addEventListener("mouseover",function(){
         bg_dark.forEach(function(elem){
-            elem.classList.add("active");
+            elem.classList.add("page-block");
         });
     });
     ele.addEventListener("mouseout",function(){
         bg_dark.forEach(function(elem){
-            elem.classList.remove("active");
+            elem.classList.remove("page-block");
         });
     });
 });

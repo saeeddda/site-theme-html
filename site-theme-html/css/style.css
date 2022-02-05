@@ -184,24 +184,16 @@ header{
     position: relative;
     z-index: 9999;
 }
-.dark-background{
-    width: 100%;
-    height: 100vh;
-    display: block;
-    opacity: 0;
-    background-color: #000;
-    visibility: hidden;
-    position: absolute;
-    top: 0;
+body.page-block::before{
+    content: '';
+    position: fixed;
     left: 0;
-    right: 0;
-    bottom: 0;
-    transition: all 150ms ease-in-out;
-    z-index: -1;
-}
-.dark-background.active{
-    visibility: visible;
-    opacity: 0.30;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 7;
+    display: block;
 }
 header .top-header{
     padding:15px 0 10px;
@@ -586,12 +578,14 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items 
     font-size: 14px;
     font-weight: 300;
 }
-.category-boxs .cat-title{
+.category-boxs .cat-title,
+.blogs .blog-title{
     margin-bottom: 13px;
     font-size: 20px;
     font-weight: 300;
 }
-.category-boxs .cat-title span.red{
+.category-boxs .cat-title span.red,
+.blogs .blog-title span.red{
     color: #eb3a3a;
     font-weight: normal;
 }
@@ -619,6 +613,7 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items 
     justify-content: flex-start;
     align-items: center;
     font-size: 15px;
+    outline: 0;
 }
 .category-boxs .category-items .cat-item a img{
     width: 50px;
@@ -812,4 +807,37 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items 
 .products .product-items .owl-nav button.owl-next.disabled{
     opacity: 0;
     visibility: hidden;
+}
+.blogs .blog-items{
+    display: flex;
+    justify-self: flex-start;
+    align-items: center;
+}
+.blogs .blog-items .blog-item{
+    width: 350px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 0px 6px rgb(0 0 0 / 16%);
+}
+.blogs .blog-items .blog-item .header{
+    position: relative;
+}
+.blogs .blog-items .blog-item .header a{
+    outline: 0;
+}
+.blogs .blog-items .blog-item .header a img{
+    width: 100%;
+    height: 100%;
+}
+.blogs .blog-items .blog-item .header span{
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #eb3a3a;
+    border-radius: 16px;
+    position: absolute;
+    z-index: 9999;
+    left: 10px;
+    bottom: 10px;
 }
