@@ -146,7 +146,7 @@ html{
     direction: rtl;
 }
 body{
-    font-family: yekanbakhen,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: yekanbakh,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 13px;
     color: #4a5f73;
     background-color: #f5f5f5;
@@ -179,9 +179,12 @@ h1,h2,h3,h4,h5,h6,p{
 }
 /*---------------------------------------------------------------------*/
 header{
+    width: 100%;
     background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
     box-shadow: 0px 2px 6px rgb(0 0 0 / 6%);
-    position: relative;
     z-index: 9999;
 }
 body.page-block::before{
@@ -238,6 +241,7 @@ header .top-header .account-cart-buttons{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: relative;
 }
 header .top-header .account-cart-buttons a{
     margin: 0 5px;
@@ -266,11 +270,47 @@ header .top-header .account-cart-buttons a.login-register{
 header .top-header .account-cart-buttons a.mini-cart{
     width: 90px;
     height: 50px;
+    position: relative;
 }
 header .top-header .account-cart-buttons a.mini-cart span{
     padding: 3px 10px;
     border-radius: 50px;
     background-color: #eb3a3a4d;
+}
+header .top-header .account-cart-buttons .mini-cart-content{
+    width: 350px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    box-shadow: 0px 3px 12px rgb(0 0 0 / 6%);
+}
+header .top-header .account-cart-buttons .mini-cart-content .cart-empty{
+    height: 100%;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+header .top-header .account-cart-buttons .mini-cart-content .cart-empty .cart-footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+header .top-header .account-cart-buttons .mini-cart-content .cart-empty .cart-footer a{
+    color: #eb3a3a;
+    border: 0;
+    border-bottom: 1px dashed #eb3a3a;
+    border-radius: 0;
+}
+header .top-header .account-cart-buttons .mini-cart-content .cart-empty .cart-footer .cart-sep{
+    display: block;
+    width: 1px;
+    height: 30px;
+    background-color: #474747;
 }
 nav.menu{
     height: 54px;
@@ -785,7 +825,8 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items 
 .products .product-items .product-item .body .buttons button img{
     width: 20px;
 }
-.products .product-items .owl-nav button{
+.products .product-items .owl-nav button,
+.blogs .blog-items .owl-nav button{
     width: 35px;
     height: 80px;
     display: block;
@@ -797,14 +838,18 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items 
     visibility: visible;
     box-shadow: 0px 0px 6px rgb(0 0 0 / 16%);
 }
-.products .product-items .owl-nav button.owl-prev{
+.products .product-items .owl-nav button.owl-prev,
+.blogs .blog-items .owl-nav button.owl-prev{
     right: -20px;
 }
-.products .product-items .owl-nav button.owl-next{
+.products .product-items .owl-nav button.owl-next,
+.blogs .blog-items .owl-nav button.owl-next{
     left: -20px;
 }
 .products .product-items .owl-nav button.owl-prev.disabled,
-.products .product-items .owl-nav button.owl-next.disabled{
+.products .product-items .owl-nav button.owl-next.disabled,
+.blogs .blog-items .owl-nav button.owl-prev.disabled,
+.blogs .blog-items .owl-nav button.owl-next.disabled{
     opacity: 0;
     visibility: hidden;
 }
@@ -814,14 +859,16 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items 
     align-items: center;
 }
 .blogs .blog-items .blog-item{
-    width: 350px;
-    height: 400px;
+    /* width: 350px; */
+    height: 390px;
     background-color: #fff;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0px 0px 6px rgb(0 0 0 / 16%);
+    cursor: pointer;
 }
 .blogs .blog-items .blog-item .header{
+    height: 220px;
     position: relative;
 }
 .blogs .blog-items .blog-item .header a{
@@ -838,6 +885,28 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items 
     border-radius: 16px;
     position: absolute;
     z-index: 9999;
-    left: 10px;
-    bottom: 10px;
+    left: 15px;
+    bottom: 15px;
+    transition: all 100ms ease-in-out;
+}
+.blogs .blog-items .blog-item:hover .header span{
+    color: #fff;
+    background-color: #4a5f73;
+}
+.blogs .blog-items .blog-item .body{
+    padding: 15px;
+}
+.blogs .blog-items .blog-item .body a,
+.blogs .blog-items .blog-item .body a .title{
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: all 100ms ease-in-out;
+}
+.blogs .blog-items .blog-item:hover .body a{
+    color: #000000;
+}
+.blogs .blog-items .blog-item .body p{
+    color: #4a5f73;
+    font-size: 14px;
+    font-weight: 300;
 }

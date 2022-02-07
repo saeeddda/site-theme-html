@@ -91,6 +91,16 @@ $('.product-items').owlCarousel({
     nav:1,
     navText:["<img src=\"img\\Right-Arrow-1.png\">", "<img src=\"img\\Left-Arrow-1.png\">"],
 })
+$('.blog-items').owlCarousel({
+    rtl:!0,
+    mouseDrag:1,
+    tuchDrag:1,
+    dots:0,
+    items:4,
+    margin:10,
+    nav:1,
+    navText:["<img src=\"img\\Right-Arrow-1.png\">", "<img src=\"img\\Left-Arrow-1.png\">"],
+})
 $(function () {
     $('[data-toggle="tooltip"]').tooltip({
         delay:{"show":50,"hide":50}
