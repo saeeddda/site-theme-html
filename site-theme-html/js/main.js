@@ -79,7 +79,7 @@ $('.category-items').owlCarousel({
     items:5,
     margin:10,
     nav:1,
-    navText:["<img src=\"img\\Right-Arrow-1.png\">", "<img src=\"img\\Left-Arrow-1.png\">"],
+    navText:["<img src=\"img\\RightArrow.svg\">", "<img src=\"img\\LeftArrow.svg\">"],
 })
 $('.product-items').owlCarousel({
     rtl:!0,
@@ -89,7 +89,7 @@ $('.product-items').owlCarousel({
     items:6,
     margin:10,
     nav:1,
-    navText:["<img src=\"img\\Right-Arrow-1.png\">", "<img src=\"img\\Left-Arrow-1.png\">"],
+    navText:["<img src=\"img\\RightArrow.svg\">", "<img src=\"img\\LeftArrow.svg\">"],
 })
 $('.blog-items').owlCarousel({
     rtl:!0,
@@ -99,7 +99,7 @@ $('.blog-items').owlCarousel({
     items:4,
     margin:10,
     nav:1,
-    navText:["<img src=\"img\\Right-Arrow-1.png\">", "<img src=\"img\\Left-Arrow-1.png\">"],
+    navText:["<img src=\"img\\RightArrow.svg\">", "<img src=\"img\\LeftArrow.svg\">"],
 })
 $(function () {
     $('[data-toggle="tooltip"]').tooltip({
