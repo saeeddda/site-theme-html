@@ -167,6 +167,8 @@ a:hover{
 }
 .container{
     max-width: 1400px !important;
+    margin: 0 auto;
+
 }
 ul{
     list-style: none;
@@ -200,9 +202,13 @@ body.page-block::before{
 }
 header .top-header{
     padding:15px 0 10px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
 }
 header .top-header .logo{
-    width: 100%;
+    max-width: 200px;
+    margin-left: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -214,6 +220,7 @@ header .top-header .logo img{
     align-items: center;
 }
 header .top-header .search-bar{
+    max-width: 750px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -459,19 +466,17 @@ header .top-header .account-cart-buttons .mini-cart-content .cart-empty .cart-fo
     height: 20px;
     background-color: #ddd;
 }
-nav.menu{
+/*----------------------- Main Menu Start --------------------------------------*/
+.menu{
     height: 54px;
     padding: 10px  0 0 0;
     background-color: #fff;
-}
-nav.menu ul.main-menu{
     display: flex;
     justify-content: flex-start;
     align-items:center ;
-    background-color: #fff;
 }
-nav.menu ul.main-menu li.menu-item,
-nav.menu ul.main-menu li.mega-menu{
+.menu .main-menu,
+.menu .mega-menu{
     height: 43px;
     padding: 10px;
     position: relative;
@@ -479,18 +484,19 @@ nav.menu ul.main-menu li.mega-menu{
     transition: all 100ms ease-in-out;
     cursor: pointer;
 }
-nav.menu ul.main-menu li.menu-item:hover{
+.menu .main-menu:hover{
     border-bottom: 2px solid #eb3a3a;
 }
-nav.menu ul.main-menu li.menu-item a.menu-link,
-nav.menu ul.main-menu li.mega-menu a.mega-menu-link{
+.menu .main-menu .menu-link,
+.menu .mega-menu .mega-menu-link{
     font-size: 15px;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-nav.menu ul.main-menu li.menu-item ul.submenu{
-    width: 250px;
+.menu .main-menu .submenu{
+    min-width: 250px;
+    max-width: 300px;
     padding-top: 20px;
     border-radius: 8px;
     background-color: #fff;
@@ -498,45 +504,77 @@ nav.menu ul.main-menu li.menu-item ul.submenu{
     top: 20px;
     right: 0;
     font-size: 15px;
-    overflow: hidden;
+    /* overflow: hidden; */
     visibility: hidden;
     box-shadow: 0px 3px 12px rgb(0 0 0 / 6%);
     z-index: -1;
     transition: all 100ms ease-in-out;
 }
-nav.menu ul.main-menu li.menu-item:hover ul.submenu{
+.menu .main-menu:hover .submenu{
     top:30px;
     visibility: visible;
 }
-nav.menu ul.main-menu li.menu-item ul.submenu li.submenu-item{
+.menu .main-menu .submenu .item,
+.menu .main-menu .sub .sub-item{
     padding: 10px 20px;
 }
-nav.menu ul.main-menu li.menu-item ul.submenu li.submenu-item:hover{
+.menu .main-menu .submenu .item:hover,
+.menu .main-menu .sub .sub-item:hover{
     background-color: #f2f2f299;
 }
-nav.menu ul.main-menu li.menu-item ul.submenu li.submenu-item:hover a{
+.menu .main-menu .submenu .item:hover .item-link,
+.menu .main-menu .sub .sub-item:hover .sub-item-link{
     color: #eb3a3a;
 }
-nav.menu ul.main-menu li.mega-menu{
+.menu .main-menu .submenu .item .item-link,
+.menu .main-menu .sub .sub-item .sub-item-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu .main-menu .submenu .item .item-link.has-sub::after,
+.menu .main-menu .sub .sub-item .sub-item-link.has-sub::after{
+    content: url('../img/LeftArrow.svg');
+    width: 10px;
+    height: 10px;
+}
+.menu .main-menu .sub{
+    min-width: 250px;
+    max-width: 300px;
+    border-radius: 16px 0 16px 16px;
+    background-color: #fff;
+    position: absolute;
+    top: 30px;
+    left: -230px;
+    visibility: hidden;
+    box-shadow: 0px 3px 12px rgb(0 0 0 / 6%);
+    transition: all 100ms ease-in-out;
+}
+.menu .main-menu .submenu .item:hover .sub{
+    left: -240px;
+    visibility: visible;
+}
+/* Mega Menu */
+.menu .mega-menu{
     width: 170px;
     margin-left: 5px;
     border-radius: 8px;
     background-color: #fafafa;
     position: relative;
 }
-nav.menu ul.main-menu li.mega-menu a.mega-menu-link img.mega-menu-image{
+.menu .mega-menu .mega-menu-link img.mega-menu-image{
     width: 18px;
     margin-left: 10px;
 }
-nav.menu ul.main-menu li.mega-menu a.mega-menu-link img.mega-menu-arrow{
+.menu .mega-menu .mega-menu-link img.mega-menu-arrow{
     width: 10px;
     transform: rotate(180deg);
     transition: all 150ms ease-in-out;
 }
-nav.menu ul.main-menu li.mega-menu:hover a.mega-menu-link img.mega-menu-arrow{
+.menu .mega-menu:hover .mega-menu-link img.mega-menu-arrow{
     transform: rotate(0deg);
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu{
+.menu .mega-menu .mega-submenu{
     width: 1600px;
     min-height: 500px;
     display: flex;
@@ -551,11 +589,11 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu{
     transition: all 150ms ease-in-out;
     z-index: -1;
 }
-nav.menu ul.main-menu li.mega-menu:hover .mega-submenu{
+.menu .mega-menu:hover .mega-submenu{
     top: 30px;
     visibility: visible;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item{
+.menu .mega-menu .mega-submenu .mega-submenu-item{
     width: calc(100% - 220px);
     padding-top: 20px;
     background-color: #fff;
@@ -563,11 +601,11 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item{
     justify-content: flex-start;
     align-items: flex-start;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-links{
+.menu .mega-menu .mega-submenu .mega-submenu-links{
     padding-top: 20px;
     border-left: 2px solid #eee;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-links a.mega-submenu-link{
+.menu .mega-menu .mega-submenu .mega-submenu-links .mega-submenu-link{
     width: 220px;
     padding: 10px 20px;
     display: flex;
@@ -577,14 +615,14 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-links a.mega-subm
     font-weight: 500;
     transition: all 100ms ease-in-out;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-links a.mega-submenu-link img.mega-submenu-link-image{
+.menu .mega-menu .mega-submenu .mega-submenu-links .mega-submenu-link .mega-submenu-link-image{
     height: 10px;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-links a.mega-submenu-link.active{
+.menu .mega-menu .mega-submenu .mega-submenu-links .mega-submenu-link.active{
     background-color: #f2f2f299;
     color: #eb3a3a;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item ul.mega-submenu-list{
+.menu .mega-menu .mega-submenu .mega-submenu-item .mega-submenu-list{
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -594,11 +632,11 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item ul.mega-subm
     align-items: flex-start;
     flex-wrap: wrap;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item ul.mega-submenu-list li.mega-submenu-list-item {
+.menu .mega-menu .mega-submenu .mega-submenu-item .mega-submenu-list .mega-submenu-list-item {
     width: 100%;
     max-width: 180px;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item ul.mega-submenu-list li.mega-submenu-list-item a.mega-submenu-list-link{
+.main-menu .mega-menu .mega-submenu .mega-submenu-item .mega-submenu-list .mega-submenu-list-item .mega-submenu-list-link{
     padding: 15px 0;
     margin-left: 20px;
     color: #2f2f2f;
@@ -609,7 +647,7 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item ul.mega-subm
     font-size: 14px;
     font-weight: bold;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item ul.mega-submenu-list li.mega-submenu-list-item a.mega-submenu-list-link::before{
+/* .menu .mega-menu .mega-submenu .mega-submenu-item .mega-submenu-list .mega-submenu-list-item .mega-submenu-list-link::before{
     content: "";
     display: block;
     width: 4px;
@@ -619,8 +657,8 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item ul.mega-subm
     position: absolute;
     top: 23px;
     right: 0px;
-}
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items{
+} */
+.menu .mega-menu .mega-submenu .mega-submenu-item .mega-items{
     width: 100%;
     height: 100%;
     display: none;
@@ -628,34 +666,35 @@ nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items{
     align-items: flex-start;
     cursor: context-menu;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items.active{
+.menu .mega-menu .mega-submenu .mega-submenu-item .mega-items.active{
     display: flex;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items .items{
+.menu .mega-menu .mega-submenu .mega-submenu-item .mega-items .items{
     width: 100%;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items .items ul.mega-submenu-list li.mega-submenu-list-item a.mega-submenu-list-link span{
+.menu .mega-menu .mega-submenu .mega-submenu-item .mega-items .items .mega-submenu-list .mega-submenu-list-item .mega-submenu-list-link span{
     padding: 0 10px;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items .items ul.mega-submenu-list li.mega-submenu-list-item a.mega-submenu-list-link img{
+.menu .mega-menu .mega-submenu .mega-submenu-item .mega-items .items .mega-submenu-list .mega-submenu-list-item .mega-submenu-list-link img{
     height: 8px;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items .items ul.mega-submenu-list li.mega-submenu-list-item ul.mega-list{
+.menu .mega-menu .mega-submenu .mega-submenu-item .mega-items .items .mega-submenu-list .mega-submenu-list-item .mega-list{
     padding: 5px;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items .items ul.mega-submenu-list li.mega-submenu-list-item ul.mega-list li.mega-list-item{
+.menu .mega-menu .mega-submenu .mega-submenu-item .mega-items .items .mega-submenu-list .mega-submenu-list-item .mega-list .mega-list-item{
     padding: 5px;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items .background-image{
+.menu .mega-menu .mega-submenu .mega-submenu-item .mega-items .background-image{
     width: 250px;
     height: 250px;
     padding: 0 0 20px 20px;
     align-self: flex-end;
 }
-nav.menu ul.main-menu li.mega-menu .mega-submenu .mega-submenu-item .mega-items .background-image img{
+.menu .mega-menu .mega-submenu .mega-submenu-item .mega-items .background-image img{
     width: 100%;
     height: 100%;
 }
+/*----------------------- Main Menu End --------------------------------------*/
 .banners-vertical{
     width: 25%;
     display: flex;
